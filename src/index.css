@@ -1,14 +1,86 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+  }
+  
+  body,
+  html,
+  #root {
+    background-color: #282c34;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+  }
+#login-container {
+  margin: 0 auto;
+  width: 500px;
+  transform: translateY(60%);
+  padding: 50px 40px;
+  border-radius: 2px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+#login-container #login-btn {
+  margin-top: 10px;
+}
+#login-container #login-btn .btn{
+  width: 150px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+#chat-container > div {
+  border: 2px solid #fff;
+  height: calc(100vh - 50px);
+}
+
+#msg-box {
+  border: none;
+  height: 40px;
+  margin-top: 5px;
+  padding: 11px 32px 10px 8px;
+  font-size: 1.2em;
+  color: #32465a;
+}
+#conversations {
+  height: auto;
+  min-height: calc(100% - 93px);
+  max-height: calc(100% - 93px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+#conversations #currentuser {
+  background: #262c35;
+  float: left;
+  position: fixed;
+}
+#conversations ul {
+  list-style: none;
+  margin-top: 50px;
+}
+#conversations ul li{
+  display: inline-block;
+  clear: both;
+  margin: 15px 15px 5px 15px;
+  width: calc(100% - 25px);
+  font-size: 0.9em;
+}
+#conversations ul li:nth-last-child(1) {
+    margin-bottom: 20px;
+}
+#conversations ul li p {
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 20px;
+  max-width: 205px;
+  line-height: 130%;
+}
+#conversations li.sent p {
+  background: #435f7a;
+  color: #f5f5f5;
+  float: left;
+}
+#conversations li.replies p{
+  background: #17a2b8;
+  float: right;
 }
