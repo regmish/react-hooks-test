@@ -3,7 +3,11 @@ import React, { useContext, useState } from 'react';
 import Store from '../store';
 
 const scrollBottom = () => {
-	document.getElementById('conversations').scrollTop = document.getElementById('conversations').scrollHeight;
+	const conversations = document.getElementById('conversations');
+	conversations.scrollTo({
+		top: conversations.scrollHeight,
+		behavior: 'smooth',
+	});
 };
 export default () => {
 	const { store, setContext } = useContext(Store);
